@@ -13,10 +13,10 @@ passive pcb adapter-plate (drop-in replacement) for SM-028_v1.3 Wi-Fi Module to 
 
 ## Sidenotes
 This is yet another quick hack project and thus neither very polished nor professional - plz use at your own risk. The readme is long (as usual), as I want to document the journey. </br>
-Despite the verbosity of the README, it assumes that you know how to solder micro lead frame (MLF) packages and some basic electronics. Some things here are weirdly specific, while some are infuriating generic (assuming a lot of knowhow). 
+Despite the verbosity of the readme, it assumes that you know how to solder micro lead frame (MLF) packages and some basic electronics. Some things here are weirdly specific, while some are infuriatingly generic (assuming a lot of knowhow). 
 
 ## Preamble (Why)
-Some years ago (in the dawn of IoT), Sonoff manufactured an E27 'smart E27 lampholder' called Slampher (that had an esp8266 inside). I bought some, b/c my parents wanted to switch lights on and off to a given schedule when they were out, and Tasmota provides a nice way to do that w/o a central control station. Unfortunately, the Slampher was discontinued (who still needs this if you can buy an E27 bulb with an ESP inside). So I bought what I thought was yet another WiFi enabled E27 holder on Ali (see above) - just to find out that there was no esp chip inside. The WiFi module proved to be not hackable :-(. 
+Some years ago (in the dawn of IoT), Sonoff manufactured a 'smart E27 lampholder' called Slampher (that had an esp8266 inside). I bought some, b/c my parents wanted to switch lights on and off to a given schedule when they were out, and Tasmota provides a nice way to do that w/o a central control station. Unfortunately, the Slampher was discontinued (who still needs this if you can buy an E27 bulb with an ESP inside). So I bought what I thought was yet another WiFi enabled E27 holder on Ali (see above) - just to find out that there was no ESP chip inside. The WiFi module proved to be not hackable :-(. 
 
 Long story short: Once again I compared the voltages and signal pins - turns out these fit to an ESP! [So here we go again](https://www.youtube.com/watch?v=dTAAsCNK7RA) I guess. 
 
@@ -37,11 +37,11 @@ Long story short: Once again I compared the voltages and signal pins - turns out
 
 ## Design Decisions
 * Size must not be larger than the SM-028_v1.3 module (so that it is in fact a drop in replacement).
-* Drop-in replacement, thus all pins must retain the same position
+* Drop-in replacement, thus all pins must retain the same position and function
 * Utilize as many ESP pins as possible (no empty pads on module).
 * Have the least amount of components possible (I hate placing and soldering chicken feed). 
-* Price does not matter (integration over lots of components).
-* Have pads for GND, VCC, GPIO0, RX, TX for flashing. 
+* Price does not matter (favour integration over lots of components).
+* Have test-pads for soldering on leads for GND, VCC, GPIO0, RX, TX for flashing. 
 * All components on one side for easier reflow soldering.
 * Have a component antenna (not an etched one; I stole the antenna-idea from the [Picoclick-C3](https://github.com/makermoekoe/Picoclick-C3)). 
 * I chose 0805 b/c there was enough space, the antennae was large anyway, and b/c it's easier to solder. Sue me.
